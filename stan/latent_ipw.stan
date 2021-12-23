@@ -50,7 +50,7 @@ model {
   target += exponential_lpdf(weights_z | 1);
   // Priors for the model parameters
   target += student_t_lpdf(alpha | 3, 0, 2.5);
-  target += normal_lpdf(beta | 0, 3);
+  target += normal_lpdf(beta | -40, 6);
   target += student_t_lpdf(sigma | 3, 0, 10) - 1 * student_t_lccdf(0 | 3, 0, 10);
 }
 
